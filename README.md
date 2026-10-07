@@ -4,11 +4,11 @@
 
 [Public Drive notebook](https://colab.research.google.com/drive/15W7wUe0KhY7C4_XvfAfH95xV91sP1BHQ)
 
-The notebook contains **28 code cells**. Each cell has an English explanation
+The notebook contains **36 code cells**. Each cell has an English explanation
 and a visible checkpoint: a table, sample rows, a chart, or a status message.
 Run cells in order with **Shift + Enter**, or choose **Runtime → Run all**.
 A standard CPU runtime is enough. Colab's preinstalled pandas, numpy and
-matplotlib are used, so there is no installation cell.
+matplotlib are used; the GIS cells install GeoPandas from PyPI if needed.
 
 ## Data
 
@@ -35,10 +35,11 @@ and copies the results ZIP to that folder.
 |---|---|
 | `NJ_Digital_Equity_Colab.ipynb` | Editable notebook with saved visual outputs |
 | `NJ_Digital_Equity_Data.zip` | Verified input snapshot |
-| `NJ_Digital_Equity_Results.zip` | Initial processed tables, reports and PNG charts |
+| `NJ_Digital_Equity_Results.zip` | Processed tables, summaries, PNG charts and joined GIS GeoPackage |
 | `NJ_Digital_Equity_Colab_Walkthrough.html` | Downloadable reading version |
 | `download_data.py` | Collect another official-source snapshot in a new dated folder |
 | `snapshot_info.json` | Input ZIP hash |
+| `tl_2024_34_tract.zip` | Official 2024 NJ tract shapefile and companion files |
 
 Saved notebook outputs were initially verified locally. Re-running in Colab
 replaces them with outputs from the Colab runtime.
@@ -68,3 +69,9 @@ FCC network availability has not been downloaded. No causal model is included.
 Keep this snapshot unchanged for reproducibility. Use the downloader in a new
 dated folder to collect a new snapshot. Public source data remain subject to
 their source terms; no new blanket license is assigned here.
+
+## Tract maps
+
+Cells 29–36 display source descriptions, variable definitions, descriptive statistics, shapefile provenance and join checks inside code outputs. All 2,181 tract GEOIDs match one-to-one. Maps compare no internet access, poverty and median income; a bivariate map combines relative poverty and no-access terciles. Small denominators and missing estimates are flagged. Terciles describe relative rankings, not policy thresholds or causal effects.
+
+The boundaries come from [2024 Census TIGER/Line](https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_34_tract.zip). The ZIP is checked against SHA-256 `6aa58cfd7b8563383a0104bc7363d9de9daeac0ad524a12ed0d4fd473a03c38e`.
