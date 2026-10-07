@@ -75,3 +75,7 @@ their source terms; no new blanket license is assigned here.
 Cells 29–36 display source descriptions, variable definitions, descriptive statistics, shapefile provenance and join checks inside code outputs. All 2,181 tract GEOIDs match one-to-one. Maps compare no internet access, poverty and median income; a bivariate map combines relative poverty and no-access terciles. Small denominators and missing estimates are flagged. Terciles describe relative rankings, not policy thresholds or causal effects.
 
 The boundaries come from [2024 Census TIGER/Line](https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_34_tract.zip). The ZIP is checked against SHA-256 `6aa58cfd7b8563383a0104bc7363d9de9daeac0ad524a12ed0d4fd473a03c38e`.
+
+## Descriptive variable names
+
+The first code cell defines readable dataset names and maps all 62 ACS estimate/MOE columns to descriptive analysis names. Later calculations, CSV outputs and GIS layers use these names. Original Census codes remain in the source mapping and metadata. `_households` denotes household counts, `_population` person counts, `_pct` percentages, and `_moe` margins of error. All 36 cells were rerun; six main indicators remain numerically unchanged across all 2,181 tracts.
